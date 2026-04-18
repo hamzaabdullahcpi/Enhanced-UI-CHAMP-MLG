@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Technical Policy Palette */
+  --color-paper: #F8FAFC; /* Slate 50 - clean, tech off-white */
+  --color-ink: #0F172A; /* Slate 900 - dark, high contrast text */
+  --color-ink-muted: #475569; /* Slate 600 - secondary text */
+  --color-surface: #FFFFFF;
+  --color-line: #E2E8F0; /* Slate 200 - structural borders */
+  
+  --color-accent: #0F766E; /* Teal 700 - Professional/Technical */
+  --color-accent-light: #CCFBF1; /* Teal 100 */
+  
+  --color-success: #15803D; /* Green 700 */
+  --color-success-bg: #DCFCE7; /* Green 100 */
+  
+  --color-warning: #B45309; /* Amber 700 */
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Base override to kill generic shadows and rounded radii easily */
+* {
+  border-color: var(--color-line);
+}
