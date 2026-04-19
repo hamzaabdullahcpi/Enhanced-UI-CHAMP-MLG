@@ -8,7 +8,7 @@ const getGeminiClient = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-const SYSTEM_INSTRUCTION = "You are a Multilevel Governance Strategy Assistant based on the CHAMP initiative and the CCFLA/Urban-Act Enabling Framework Conditions standards. Your exclusive function is to contextualize climate finance recommendations. Reject any query unrelated to urban climate finance. You must extract operational logic strictly from the provided recommendation text. Suggest precise, structurally necessary stakeholders. Do not generate fictional budgets or hyper-specific operational metrics. For National Governments, focus on subnational networks, line ministries, and national development banks. For Cities, focus on internal municipal departments and local intermediaries. For International Partners, focus on sovereign counterparts and co-financiers.";
+const SYSTEM_INSTRUCTION = "You are an expert Multilevel Governance Strategy Assistant based on the CHAMP initiative and the CCFLA/Urban-Act Enabling Framework Conditions. Your exclusive function is to deeply analyze and contextualize climate finance recommendations. Reject any query unrelated to urban climate finance.\n\nSTAKEHOLDER MAPPING RULES:\n- Identify all relevant urban, climate, and finance stakeholders needed to implement a recommendation. \n- Account for fragmented governance: delineate between state/provincial and city-level responsibilities if applicable.\n- Broaden the search deeply, mapping across NGOs, expert organizations, policy research institutions, MDBs, Project Preparation Facilities (PPFs), and National Development Banks (NDBs) that operate in or can work with the specific country/city.\n- Double-check that your stakeholder suggestions are contextually accurate for the specific geography.\n\nTONE AND ACCURACY CONSTRAINTS:\n- Do not prescribe rigid, fictional roles. Use phrases like 'could provide', 'likely can support', or 'might facilitate' instead of 'will do' or 'is responsible for', unless you are absolutely certain of an official, legally established mandate.\n- Only use definitive/certain language if you have high confidence based on established facts.";
 
 export interface AiContextData {
   country?: string;
@@ -35,7 +35,20 @@ export async function identifyStakeholders(
 
   const targetRecommendation = recommendationPoints.join(' ');
 
-  const prompt = `Actor: ${actor}. Entity: ${entityName}. Target Recommendation: ${targetRecommendation}. Read the strategic recommendation above. Identify the mandatory institutional stakeholders that ${entityName} must engage to operationalize this recommendation. Output a strict, comma-separated list of 4 to 6 specific stakeholder names. Provide only the tags.`;
+  const prompt = `Actor: ${actor}
+Country: ${contextData.country || "Not specified"}
+City: ${contextData.city || "Not specified"}
+Partner Type: ${contextData.partnerType || "Not specified"}
+Target Recommendation: ${targetRecommendation}
+
+CRITICAL VALIDATION STEP:
+If a City and Country are both provided, you MUST first verify if the City is actually located within the Country. If it is NOT, abort and reply exactly with:
+LOCATION_MISMATCH: The city of ${contextData.city} is not located in ${contextData.country}.
+Do not output any other text whatsoever if there is a mismatch.
+
+STAKEHOLDER IDENTIFICATION:
+If the location is valid (or if no city was provided), deeply analyze the recommendation. Identify 4 to 8 specific, highly relevant institutional stakeholders that the actor must engage to operationalize this in the specified location.
+Output a strict, comma-separated list of these specific stakeholder names. Provide only the tags in the comma-separated list.`;
 
   try {
     const response = await ai.models.generateContent({
@@ -51,8 +64,13 @@ export async function identifyStakeholders(
     if (!text) {
       throw new Error("The AI returned an empty response. This might be due to safety filters.");
     }
+    
+    const trimmedText = text.trim();
+    if (trimmedText.startsWith("LOCATION_MISMATCH:")) {
+      throw new Error(trimmedText.replace("LOCATION_MISMATCH:", "").trim());
+    }
 
-    return text.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    return trimmedText.split(',').map(s => s.trim()).filter(s => s.length > 0);
   } catch (error: any) {
     console.error("Error calling Gemini API for stakeholders:", error);
     const message = error?.message || "Unknown error";

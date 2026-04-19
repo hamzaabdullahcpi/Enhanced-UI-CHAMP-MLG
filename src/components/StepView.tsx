@@ -256,7 +256,7 @@ function RecommendationCard({ rec, stepTitle }: { rec: any; stepTitle: string })
   const isFormValid = () => {
     if (isNational) return form.country!.trim() !== '';
     if (isCity) return form.country!.trim() !== '' && form.city!.trim() !== '';
-    if (isPartner) return form.partnerType!.trim() !== '';
+    if (isPartner) return form.partnerType!.trim() !== '' && form.country!.trim() !== '';
     return false;
   };
 
@@ -371,12 +371,21 @@ function RecommendationCard({ rec, stepTitle }: { rec: any; stepTitle: string })
                     </div>
                   )}
                   {isPartner && (
-                    <div>
-                      <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Select Partner Type <span className="text-red-500">*</span></label>
-                      <select value={form.partnerType} onChange={e => setForm({...form, partnerType: e.target.value})} className="w-full p-3 border border-slate-200 rounded-lg bg-white text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none font-medium">
-                        <option value="">Select Partner Type...</option>
-                        {PARTNER_TYPES.map(p => <option key={p} value={p}>{p}</option>)}
-                      </select>
+                    <div className="flex flex-col md:flex-row gap-4">
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Target Country <span className="text-red-500">*</span></label>
+                        <select value={form.country} onChange={e => setForm({...form, country: e.target.value})} className="w-full p-3 border border-slate-200 rounded-lg bg-white text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none font-medium">
+                          <option value="">Select Country...</option>
+                          {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
+                        </select>
+                      </div>
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Partner Type <span className="text-red-500">*</span></label>
+                        <select value={form.partnerType} onChange={e => setForm({...form, partnerType: e.target.value})} className="w-full p-3 border border-slate-200 rounded-lg bg-white text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none font-medium">
+                          <option value="">Select Partner Type...</option>
+                          {PARTNER_TYPES.map(p => <option key={p} value={p}>{p}</option>)}
+                        </select>
+                      </div>
                     </div>
                   )}
                   
