@@ -217,18 +217,16 @@ export const stepsData = [
           title: "National climate policies often fail to explicitly quantify subnational financial requirements.",
           shortText: "Many Nationally Determined Contributions (NDCs) lack the vital urban content required to accurately define the cost of local implementation.",
           expandedText: [
-            "As highlighted by UN-Habitat's analysis, while numerous countries have endorsed CHAMP, many still feature low, moderate, or zero urban content in their commitments. This leads to high-level goals without funding realities attached.",
-            "Without bottom-up aggregation of Local Climate Action Plans (LCAPs), national ministries cannot translate overarching climate targets into specific capital expenditure (CapEx) and operational expenditure (OpEx) requirements for cities.",
-            "Failing to embed these quantified urban needs means National Development Plans and NDCs lack clear, costed investment signals, severely hindering the ability to mobilize finance or allocate sovereign budgets effectively."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Ad-hoc committees and fragmented national-local coordination mechanisms halt progress.",
           shortText: "Bridging the gap between national ministries and city halls requires permanent, funded coordination structures rather than temporary, ad-hoc committees.",
           expandedText: [
-            "Limited coordination between national and local governments is a primary reason why urban priorities fail to translate into investments. Operating with temporary working groups ensures that institutional knowledge is routinely lost and momentum stalls.",
-            "Without formal National-Local Coordination Mechanisms serving as the central nervous system for climate finance delivery, efforts to align national regulatory frameworks with local realities fall apart. Navigating jurisdictional disputes becomes prolonged.",
-            "Crucially, these disjointed entities often fail to include representatives from the Ministry of Finance alongside the Ministry of Environment and key mayoral leadership, meaning environmental policy remains disconnected from fiscal reality."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -237,18 +235,16 @@ export const stepsData = [
           title: "Network-based governance models integrate businesses, academia, and civil society into planning.",
           shortText: "Traditional top-down planning can be replaced by formally distributed 'Transition Arenas' or 'Climate City Contracts' that co-create investment portfolios.",
           expandedText: [
-            "Network-based governance shifts the local government into the role of an orchestrator. By distributing decision-making across a wide array of stakeholders, the resulting investment plans are inherently stronger and grounded in market realities.",
-            "Establishing formal 'Climate City Contracts' enables municipalities to co-create investment portfolios with local businesses, utility providers, citizen groups, and researchers. This brings external expertise and capital directly into the planning cycle.",
-            "This method ensures robust project pipelines that already have secured buy-in from the actors ultimately required to build, regulate, and operate the infrastructure, vastly reducing downstream implementation delays."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Embedding Just Transition metrics ensures social protection and community resilience.",
           shortText: "Explicitly planning for social inclusion and green jobs inside the MLG framework mitigates inequality and strengthens the long-term mandate for climate action.",
           expandedText: [
-            "Climate finance is not just about reducing greenhouse gases; it is about fundamentally restructuring urban economies. If this transition isn’t managed intentionally, it risks displacing vulnerable communities and exacerbating existing divides.",
-            "A Just Transition requires that the costs of workforce retraining, affordable housing preservation, and community compensation are calculated and included directly in initial climate investment plans, rather than left as unfunded afterthoughts.",
-            "Institutionalizing these metrics into MLG frameworks ensures climate investments deliver immediate co-benefits to the population, securing the crucial political and social mandate required to sustain ambitious climate action over decades."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -268,7 +264,10 @@ export const stepsData = [
         frameworks: [
           { name: "Climate City Contract (CCC)", link: "https://en.viablecities.se/klimatkontrakt-2030" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "Viable Cities", link: "https://en.viablecities.se/" },
           { name: "EU Cities Mission", link: "https://netzerocities.eu/" }
@@ -282,7 +281,10 @@ export const stepsData = [
         frameworks: [
           { name: "Viable Cities Coordination Team", link: "https://en.viablecities.se/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: []
       },
       {
@@ -293,7 +295,10 @@ export const stepsData = [
         frameworks: [
           { name: "CCC Investment Planning Phase", link: "https://en.viablecities.se/klimatkontrakt-2030" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "C40", link: "https://www.c40.org/" },
           { name: "ICLEI", link: "https://iclei.org/" }
@@ -338,18 +343,16 @@ export const stepsData = [
           title: "High-level urban priorities frequently fail to translate into bankable, structured financial assets.",
           shortText: "A massive funding gap exists because early-stage, high-risk capital isn't available to fund the crucial feasibility and financial modeling needed to structure projects.",
           expandedText: [
-            "With a USD 4.3 trillion annual urban financing gap to 2030, a core bottleneck is that municipal climate concepts rarely mature into 'bankable' pipelines. Designing these assets is a rigorous process requiring specialized financial engineering.",
-            "This process requires significant early-stage funding (grants) to cover feasibility studies, environmental impact assessments, legal structuring, and specialized financial modeling. Often, subnational governments lack both the budget and the technical capacity for this phase.",
-            "Without robust Project Preparation Facilities (PPFs) providing risk-tolerant capital, cities produce conceptual plans that look good on paper but fail to meet the stringent risk-return profiles and documentation demanded by institutional investors and commercial banks."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Individual municipal projects are too small to attract large-scale institutional capital.",
           shortText: "Institutional investors require large investment ticket sizes, meaning localized projects like a single solar array face a severe 'ticket-size deficit'.",
           expandedText: [
-            "Institutional investors, such as pension funds and sovereign wealth funds, typically seek investment ticket sizes exceeding $50 million to $100 million to offset transaction costs and administrative overhead. They cannot underwrite hundreds of tiny projects.",
-            "Individual municipal interventions—such as a bike lane extension, a single school's solar array, or a localized drainage upgrade—are far too small to attract this level of capital. This structural mismatch leaves many vital projects unfunded.",
-            "Without active intervention to bundle these initiatives, the climate finance market remains structurally misaligned with the localized nature of urban climate implementation."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -358,27 +361,24 @@ export const stepsData = [
           title: "Project Preparation Facilities (PPFs) de-risk projects through technical assistance and grant funding.",
           shortText: "Providing early-stage funding to mature projects results in standardized, de-risked prospectuses that meet global banking standards.",
           expandedText: [
-            "By establishing or partnering with strong Project Preparation Facilities, national and local governments can inject vital technical assistance into early-stage ideas. PPFs act as an incubator for climate infrastructure.",
-            "This targeted support provides the financial engineering necessary to navigate legal risks and clarify revenue models. The outcome is a standardized, de-risked project prospectus ready for the open market.",
-            "Ultimately, properly capitalized PPFs allow cities to overcome the initial hurdle of project origination, transforming their ambitious climate action plans into certified, pipeline-ready assets that attract serious MDB and private sector interest."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "National Aggregation Platforms bundle subnational projects to achieve essential economies of scale.",
           shortText: "Pooling multiple small-scale urban projects into a massive sovereign or sub-sovereign portfolio makes them accessible to institutional debt and green bond markets.",
           expandedText: [
-            "To bridge the 'ticket-size deficit', national governments can establish aggregation platforms. These mechanisms physically combine multiple small-scale urban projects from municipalities across the country into a single, massive financial package.",
-            "Integrating urban pipelines into National Climate Investment Platforms allows governments to achieve the volume necessary to issue aggregated green municipal bonds or secure multi-hundred-million dollar loans from Multilateral Development Banks (MDBs).",
-            "This aggregation fulfills the core promise of multilevel governance by linking local needs to national scale, providing municipalities access to global capital markets that they could never enter independently."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "National Climate Taxonomies standardize pipelines and eliminate greenwashing risks.",
           shortText: "Establishing strict technical screening criteria ensures that all aggregated infrastructure genuinely delivers climate aligned impacts.",
           expandedText: [
-            "For an aggregated pipeline to be credible to sophisticated international markets, investors must trust that the underlying municipal projects genuinely deliver the promised emissions reductions or resilience gains.",
-            "Developing and enforcing a National Climate Taxonomy provides a unified classification system. It sets strict, standardized technical screening criteria for various infrastructure sectors, ensuring every project uses the same climate accounting.",
-            "When municipalities use this centralized taxonomy to tag and structure their projects, it provides total transparency, eliminates greenwashing risks, and allows investors to easily compare portfolios. It is the absolute prerequisite for securing certified green bond status."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -390,42 +390,82 @@ export const stepsData = [
     },
     pathways: [
       {
-        name: "Pipeline Coordination and Project Preparation",
-        what: "Facilities providing tailored technical and financial engineering necessary to structure urban projects for market entry.",
-        howItWorks: "National PPFs provide early-stage project development capital to mature the standardized pipeline, turning urban priorities into bankable assets.",
-        howToImplement: "Capitalize national PPFs through sovereign budgets to support Tier 2 and Tier 3 cities.",
+        name: "Project Preparation",
+        what: "The specialized process of maturing conceptual urban climate priorities into structured, bankable infrastructure assets.",
+        howItWorks: "Specialized Technical Assistance (TA) is provided by dedicated Project Preparation Facilities (PPFs), and occasionally by city networks or MDB-led facilities, to cover critical early-stage feasibility and financial modelling constraints.",
+        howToImplement: "Seek support from international PPFs via the PPF Connector, seek support from MDBs via national governments, or establish subnational-focused national PPFs directly.",
         frameworks: [
-          { name: "CCFLA PPF Connector", link: "https://climatecities.org/" }
+          { name: "Project Preparation Resource Directory (CCFLA)", link: "https://climatecities.org/" },
+          { name: "Project Preparation Support Directory (NDC Partnership)", link: "https://ndcpartnership.org/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
-          { name: "MDBs", link: "https://www.worldbank.org/" },
-          { name: "Regional Development Banks", link: "https://www.adb.org/" }
+          { 
+            name: "Project Preparation Facilities", 
+            subPartners: [
+              { name: "C40 Cities Finance Facility (CFF)", link: "https://www.c40cff.org/" },
+              { name: "CDIA (Cities Development Initiative for Asia)", link: "https://cdia.asia/" },
+              { name: "FELICITY", link: "https://www.eib.org/en/projects/regions/latin-america/felicity" },
+              { name: "City Climate Finance Gap Fund", link: "https://www.citygapfund.org/" },
+              { name: "ICF (International Climate Finance)", link: "https://www.gov.uk/guidance/international-climate-finance" },
+              { name: "Subnational Climate Fund", link: "https://www.pegasuscg.com/scf" },
+              { name: "TAP (Transformative Actions Program)", link: "https://tap-potential.org/" },
+              { name: "UCCRTF (Urban Climate Change Resilience Trust Fund)", link: "https://www.adb.org/site/funds/funds/urban-climate-change-resilience-trust-fund" }
+            ]
+          },
+          { 
+            name: "MDBs", 
+            subPartners: [
+              { name: "World Bank Group", link: "https://www.worldbank.org/" },
+              { name: "Asian Development Bank (ADB)", link: "https://www.adb.org/" },
+              { name: "African Development Bank (AfDB)", link: "https://www.afdb.org/" },
+              { name: "Inter-American Development Bank (IDB)", link: "https://www.iadb.org/" },
+              { name: "European Investment Bank (EIB)", link: "https://www.eib.org/" },
+              { name: "European Bank for Reconstruction and Development (EBRD)", link: "https://www.ebrd.com/" },
+              { name: "Asian Infrastructure Investment Bank (AIIB)", link: "https://www.aiib.org/" },
+              { name: "New Development Bank (NDB)", link: "https://www.ndb.int/" },
+              { name: "Islamic Development Bank (IsDB)", link: "https://www.isdb.org/" },
+              { name: "Development Bank of Latin America (CAF)", link: "https://www.caf.com/" }
+            ]
+          }
         ]
       },
       {
-        name: "National Pipeline Aggregation Frameworks",
+        name: "Pipeline Coordination and Aggregation",
         what: "The operational mechanism that physically bundles subnational projects to match the economies of scale required by large investors.",
         howItWorks: "Executes supply- and demand-side aggregation by combining the structured projects emerging from the PPFs into a unified sovereign portfolio.",
         howToImplement: "Create a centralized digital registry managed by the national platform where municipalities submit capital expenditures for bundling.",
         frameworks: [
+          { name: "PCVR Program", link: "https://www.ccfla.org/pcvr" },
           { name: "Urban-Inclusive Country Platform", link: "https://www.undp.org/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
+          { name: "CCFLA", link: "https://climatecities.org/" },
           { name: "UNDP", link: "https://www.undp.org/" },
           { name: "National Ministries of Finance", link: "#" }
         ]
       },
       {
-        name: "Climate-Aligned Taxonomies and GHG Standardization",
-        what: "Classification systems and standardized climate calculations defining which local infrastructure qualifies as climate-aligned.",
+        name: "Climate-Aligned Taxonomies",
+        what: "Classification systems defining which local infrastructure qualifies as climate-aligned.",
         howItWorks: "Local project definitions and emissions data are mapped directly to national or MDB taxonomies, acting as the absolute prerequisite for financial securitization.",
         howToImplement: "National ministries issue mandatory taxonomy guidelines for all subnational projects.",
         frameworks: [
-          { name: "Climate Bonds Taxonomy", link: "https://www.climatebonds.net/" }
+          { name: "Climate Bonds Initiative Taxonomy", link: "https://www.climatebonds.net/" },
+          { name: "Tailwind Taxonomy", link: "https://www.tailwind.org/" },
+          { name: "EU Taxonomy for Sustainable Activities", link: "https://finance.ec.europa.eu/sustainable-finance/tools-and-standards/eu-taxonomy-sustainable-activities_en" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "CBI", link: "https://www.climatebonds.net/" }
         ]
@@ -469,18 +509,16 @@ export const stepsData = [
           title: "Municipalities lack investment-grade credit ratings, effectively locking them out of capital markets.",
           shortText: "Most cities in developing and emerging economies face severe structural credit barriers, preventing them from securing affordable interest rates or direct loans.",
           expandedText: [
-            "The vast majority of municipalities in developing and emerging economies do not possess investment-grade credit ratings. They often suffer from poor historical revenue collection, opaque accounting practices, and legal restrictions on their ability to hold debt.",
-            "This reality prevents them from borrowing directly from domestic or international capital markets. Even when they can secure loans, the risk premiums drive interest rates so high that climate infrastructure projects become financially unviable.",
-            "Without external guarantees or sophisticated credit enhancement mechanisms, perfectly designed and crucial urban resilience projects will collapse at the financing stage, stalled by perceived risk."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Unproven urban climate technologies and operational models struggle to secure commercial debt.",
           shortText: "Commercial banks and institutional investors require guaranteed 'proof of concept' before deploying large-scale capital into new green technologies.",
           expandedText: [
-            "Closing the USD 4.3 trillion gap relies on deploying novel technologies—like advanced smart grids, innovative district heating, or new zero-emission transit solutions. However, these are often unproven in localized, real-world municipal environments.",
-            "Commercial banks and private investors are highly risk-averse. They will not finance the first iteration of a new urban climate solution; they require explicit proof of concept, guaranteed revenue models, and mitigated operational risk.",
-            "If early-stage, risk-absorbing capital cannot be found to test these untested operational models, cities are forced to rely on outdated, carbon-intensive legacy infrastructure, stalling the technological leap forward required by NDCs."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -489,27 +527,24 @@ export const stepsData = [
           title: "Deploying de-risking instruments via National Development Banks bypasses local credit barriers.",
           shortText: "Sovereign guarantees, first-loss tranches, and local currency facilities artificially lower the perceived risk of municipal lending, crowding in private capital.",
           expandedText: [
-            "To circumvent local credit bottlenecks, national governments and international partners must deploy targeted de-risking instruments. This involves using sovereign financial weight to backstop subnational activity.",
-            "By utilizing National Development Banks (NDBs) as financial intermediaries, countries can issue sovereign guarantees, absorb the highest risk portions of debt (first-loss tranches), and provide specialized local currency lending that protects cities from exchange rate volatility.",
-            "These mechanisms artificially lower the perceived risk of urban climate projects to a level palatable for private commercial banks, crowding in private capital to support the CHAMP 'NDC Investment' agenda."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Catalytic (grant) capital absorbs initial risk and provides a pipeline graduation pathway.",
           shortText: "Seed funding allows municipalities to run pilot programs and test technological viability before entering traditional debt financing.",
           expandedText: [
-            "Catalytic capital—highly concessional loans or outright grants—is essential to test untested climate solutions. It actively absorbs the initial risk of failure that commercial markets avoid.",
-            "This early-stage funding empowers municipalities to confidently run pilot programs, iterate on operational models, and refine revenue collection methods without facing the threat of immediate default on commercial debt.",
-            "Once a 'System Demonstrator' or pilot program proves its technical and economic viability, it graduates from catalytic funding and becomes eligible to be rolled into aggregated portfolios for traditional, large-scale debt financing."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Aggregated municipal procurement acts as a massive market shaper for low-carbon supply chains.",
           shortText: "When cities pool their purchasing power and mandate strict green standards, they provide suppliers the financial volume needed to decarbonize.",
           expandedText: [
-            "Municipalities collectively represent massive consumers of goods, materials, and services. By strategically leveraging this unified purchasing power through green public procurement policies, cities can act as aggressive 'market shapers'.",
-            "When multiple cities organize into procurement cohorts and mandate strict low-carbon standards in their tenders (e.g., for concrete, transport vehicles, or energy), they create a guaranteed, large-scale demand signal in the regional economy.",
-            "This immediate purchasing volume provides suppliers with the irrefutable financial certainty they need to justify overhauling their own operations, forcefully decarbonizing local supply chains from the top down."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -528,7 +563,10 @@ export const stepsData = [
         frameworks: [
           { name: "Viability Fund and LCI Framework", link: "#" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "NDBs", link: "#" }
         ]
@@ -541,7 +579,10 @@ export const stepsData = [
         frameworks: [
           { name: "System Demonstrators Model", link: "https://en.viablecities.se/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "Viable Cities", link: "https://en.viablecities.se/" },
           { name: "GEF", link: "https://www.thegef.org/" }
@@ -555,7 +596,10 @@ export const stepsData = [
         frameworks: [
           { name: "First Mover Cities (FMC) National Offer", link: "https://www.weforum.org/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: [
           { name: "WEF", link: "https://www.weforum.org/" }
         ]
@@ -590,8 +634,8 @@ export const stepsData = [
   },
   {
     id: 5,
-    title: "Scale and Enhance Multilevel Climate Investment Systems",
-    goal: "Leverage data tracking frameworks, peer networks, and global partnerships to scale successful investment models and ensure continuous implementation.",
+    title: "Monitoring and Evaluation",
+    goal: "Scale implementation by leveraging partnerships that connect cities to finance, technical assistance, implementation and monitoring support.",
     unifiedContext: {
       whatIsThisStep: "This final step reflects the continuous nature of Multilevel Governance. It involves utilizing granular data for rigorous Monitoring & Evaluation (M&E) to update climate targets, scaling lateral peer-to-peer networks to cross-pollinate successful strategies between cities, and actively engaging international support to circumvent limited sovereign administrative capacity.",
       barriers: [
@@ -599,18 +643,16 @@ export const stepsData = [
           title: "Implementing massive Multilevel Governance systems often exceeds domestic sovereign administrative capacity.",
           shortText: "Even well-resourced national governments frequently lack the highly specialized financial engineering expertise required to manage multi-billion dollar aggregation platforms.",
           expandedText: [
-            "Deploying a comprehensive Multilevel Governance framework—one that seamlessly orchestrates national taxonomies, municipal pipelines, and global debt issuance—is a monumentally complex administrative undertaking.",
-            "Often, national finance and environment ministries are understaffed or lack the niche, technical background in sub-sovereign financial engineering required to manage large-scale climate aggregation platforms and digital asset registries.",
-            "Attempting to scale these systems purely internally can result in bottlenecks, inefficient capital deployment, and missed opportunities. Recognizing the fundamental limit of domestic sovereign capacity is critical to avoiding stalled implementation."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Inadequate data tracking leads to stagnant policies and invisible municipal performance.",
           shortText: "Without granular, digitized Monitoring and Evaluation (M&E) systems, national governments cannot track capital absorption, adjust policies, or fulfil Voluntary Review pledges.",
           expandedText: [
-            "A scalable MLG system quickly degrades without real-time, accurate feedback loops. Often, climate project tracking relies on disjointed spreadsheets or delayed, annualized reporting that obscures actual municipal performance.",
-            "Without robust, digitized M&E frameworks, the National Coordination Entity cannot identify localized bottlenecks, track where capital is being successfully absorbed, or determine the true greenhouse gas yield of their investments.",
-            "This lack of granular data actively prevents the national government from fulfilling the CHAMP 'Voluntary Review' pledge and submitting accurate Voluntary National Reviews (VNRs) or Biennial Transparency Reports (BTRs)."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -619,27 +661,24 @@ export const stepsData = [
           title: "Integrating international technical assistance provides crucial financial engineering and standardization.",
           shortText: "Actively partnering with Multilateral Development Banks (MDBs) and UN agencies ensures domestic systems meet the stringent expectations of global investors.",
           expandedText: [
-            "To overcome sovereign administrative limits, national governments must actively seek out and formally integrate international technical assistance from MDBs, IFIs, and specialized climate finance networks.",
-            "This international support injects specialized financial engineering expertise directly into the National Coordination Entity. It helps standardize domestic taxonomy and aggregation practices to align perfectly with global investor expectations.",
-            "Leveraging global partnerships ensures that the national MLG system architecture is structurally sound, universally trusted, and robust enough to handle the inflow of billions of dollars in international capital."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Data-Driven M&E systems enable iterative policy and sharpens subsequent joint commitments.",
           shortText: "Using digital tracking allows the MLG framework to operate as a continuous loop, where the performance data from one fiscal year rewrites the policies of the next.",
           expandedText: [
-            "Implementing standardized M&E tracking at the municipal level provides high-fidelity, real-time insights into both climate impact and financial performance. It reveals exactly what works and what fails in the field.",
-            "Multilevel Governance is not a one-off project; it is an iterative cycle. Each year, the National-Local Coordination Mechanism must review this performance data to identify successes and friction points.",
-            "Driven by the evidence, Joint Commitments (like Climate City Contracts) are renegotiated and sharpened annually. This continuous loop ensures the policy framework remains adaptive, heavily data-driven, and permanently evolving."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         },
         {
           title: "Lateral peer-to-peer networks rapidly scale locally proven urban climate solutions horizontally.",
           shortText: "By organizing municipalities into peer cohorts, a successful pilot in one city can bypass national bureaucracy and immediately be replicated by others.",
           expandedText: [
-            "While vertical integration (national to local) is crucial, horizontal integration (local to local) is the key to accelerated scaling. Cities face similar operational hurdles and can learn from each other more quickly than they can from central mandates.",
-            "Facilitating lateral peer-to-peer cohorts or 'transition labs' allows a municipality that successfully implements a complex intervention (e.g., district cooling) to immediately share its operational blueprint.",
-            "This network effect expands the transition arena beyond isolated verticals, allowing proven solutions to cascade rapidly across the country, exponentially scaling the national transition timeline."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
           ]
         }
       ],
@@ -651,38 +690,57 @@ export const stepsData = [
     },
     pathways: [
       {
-        name: "Data-Driven M&E and Annual Iteration",
-        what: "Standardized digital tracking systems that monitor capital absorption and project yield at the municipal level.",
-        howItWorks: "Feeds directly back to the Coordination Entity to trigger the annual renewal and sharpening of the Joint Commitments, supporting Voluntary National Reviews.",
-        howToImplement: "Integrate municipal capital absorption metrics into the sovereign review process and Biennial Transparency Reports (BTR).",
+        name: "City Networks and Finance Coalitions",
+        what: "Global Matchmaking Hubs connecting aggregated sovereign portfolios with global capital and sharing best practices.",
+        howItWorks: "These coalitions work to build capacities, provide access to a broader finance actor network, and systematically replicate best practices across borders.",
+        howToImplement: "Integrate domestic project data into international climate finance registries and participate in CHAMP High-Level Dialogues to foster these essential partnerships.",
         frameworks: [
-          { name: "CCC M&E Framework", link: "https://en.viablecities.se/klimatkontrakt-2030" }
+          { name: "CCFLA Action Groups", link: "https://climatecities.org/" },
+          { name: "C40 Finance Academies", link: "https://www.c40.org/" }
         ],
-        caseStudies: [],
-        partners: []
-      },
-      {
-        name: "Global Matchmaking Hubs & High-Level Dialogues",
-        what: "Forums and digital infrastructure connecting the aggregated sovereign portfolios with global capital and sharing best practices.",
-        howItWorks: "Provides explicit technical assistance and matchmaking support for subnational governments to engage systematically with international private sector investors and share progress at COP events.",
-        howToImplement: "Integrate domestic project data into international climate finance registries and participate in CHAMP High-Level Dialogues.",
-        frameworks: [
-          { name: "CCFLA Local Hubs", link: "https://climatecities.org/" }
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
         ],
-        caseStudies: [],
         partners: [
+          { name: "C40", link: "https://www.c40.org/" },
+          { name: "ICLEI", link: "https://iclei.org/" },
+          { name: "GCoM", link: "https://www.globalcovenantofmayors.org/" },
           { name: "CCFLA", link: "https://climatecities.org/" }
         ]
       },
       {
-        name: "Lateral Peer-to-Peer Commitments",
+        name: "Local Implementation Hubs",
+        what: "Forums and localized infrastructure connecting the aggregated sovereign portfolios with capital and implementation agencies.",
+        howItWorks: "Provides explicit technical assistance, knowledge sharing, and matchmaking support for subnational governments on the ground.",
+        howToImplement: "Establish sub-regional outposts that operate natively in the local context and connect national networks to technical execution agencies.",
+        frameworks: [
+          { name: "CCFLA Brazil Local Hub", link: "https://climatecities.org/" },
+          { name: "CCFLA Central Asia Local Hub", link: "https://climatecities.org/" }
+        ],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
+        partners: [
+          { name: "CCFLA", link: "https://climatecities.org/" },
+          { name: "GIZ", link: "https://www.giz.de/en/html/index.html" }
+        ]
+      },
+      {
+        name: "Peer-to-Peer Learnings and Commitments",
         what: "Lateral agreements where cities commit to shared operational targets, promoting peer-to-peer exchanges of experiences.",
         howItWorks: "Groups municipalities into cohorts to jointly test and scale solutions, expanding the transition arena beyond isolated national-local verticals.",
         howToImplement: "Facilitate regular municipal transition labs, scaling the Viable Cities Joint Commitments model to expand horizontal learning.",
         frameworks: [
-          { name: "Viable Cities Joint Commitments", link: "https://en.viablecities.se/" }
+          { name: "First Mover Cities", link: "https://www.weforum.org/" },
+          { name: "Global Climate Neutral and Smart Cities", link: "https://netzerocities.eu/" },
+          { name: "Viable Cities", link: "https://en.viablecities.se/" }
         ],
-        caseStudies: [],
+        caseStudies: [
+          { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
+          { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
+        ],
         partners: []
       }
     ],

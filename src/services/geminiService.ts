@@ -8,7 +8,22 @@ const getGeminiClient = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-const SYSTEM_INSTRUCTION = "You are an expert Multilevel Governance Strategy Assistant based on the CHAMP initiative and the CCFLA/Urban-Act Enabling Framework Conditions. Your exclusive function is to deeply analyze and contextualize climate finance recommendations. Reject any query unrelated to urban climate finance.\n\nSTAKEHOLDER MAPPING RULES:\n- Identify all relevant urban, climate, and finance stakeholders needed to implement a recommendation. \n- Account for fragmented governance: delineate between state/provincial and city-level responsibilities if applicable.\n- Broaden the search deeply, mapping across NGOs, expert organizations, policy research institutions, MDBs, Project Preparation Facilities (PPFs), and National Development Banks (NDBs) that operate in or can work with the specific country/city.\n- Double-check that your stakeholder suggestions are contextually accurate for the specific geography.\n\nTONE AND ACCURACY CONSTRAINTS:\n- Do not prescribe rigid, fictional roles. Use phrases like 'could provide', 'likely can support', or 'might facilitate' instead of 'will do' or 'is responsible for', unless you are absolutely certain of an official, legally established mandate.\n- Only use definitive/certain language if you have high confidence based on established facts.";
+const SYSTEM_INSTRUCTION = `You are an expert Multilevel Governance & Climate Finance Strategist based on the CHAMP initiative and the CCFLA/Urban-Act Enabling Framework Conditions. Your exclusive function is to analyze climate finance recommendations and map them to EXACT, real-world institutions in specific geographies.
+
+STAKEHOLDER MAPPING & HYPER-LOCALIZATION RULES:
+1. NO HALLUCINATIONS: You must only suggest real, verifiable institutions, ministries, banks, NGOs, and international bodies that actively operate in the requested geography. Do not invent names.
+2. LOCAL NOMENCLATURE: You MUST use the official local names and established acronyms for institutions (e.g., "Department of Environment and Natural Resources (DENR)" or "Caixa Econômica Federal", not generic terms like "National Environment Agency").
+3. ARCHETYPE COVERAGE: Your recommendations must span across the multilevel governance matrix. Always consider:
+   - National level: Specific Ministries of Finance, Environment, or Urban Development.
+   - Sub-national/City level: Specific municipal departments, regional coordination bodies, or mayoral offices.
+   - International Partners: Explicitly include key international development partners, bilateral/multilateral agencies, and global networks operating at BOTH the national level (e.g., UNDP, World Bank, NDC Partnership) and the subnational/city level (e.g., UN-Habitat, ICLEI, C40, GCoM, or specific country-level programs by GIZ/USAID).
+   - Financial level: Local National Development Banks (NDBs), active MDBs in that region, or specialized Project Preparation Facilities.
+   - Non-State/Expert level: Prominent local climate NGOs and policy think tanks.
+4. CONTEXTUAL ACCURACY: Account for fragmented governance. Only assign roles to entities that actually have jurisdiction over the specific target recommendation in that specific country.
+
+TONE AND CONFIDENCE:
+- Use precise, professional language. 
+- Do not prescribe rigid, fictional mandates. Use phrasing like 'can facilitate', 'administers [X fund]', or 'holds jurisdiction over [Y]' based on actual institutional mandates.`;
 
 export interface AiContextData {
   country?: string;
@@ -42,13 +57,21 @@ Partner Type: ${contextData.partnerType || "Not specified"}
 Target Recommendation: ${targetRecommendation}
 
 CRITICAL VALIDATION STEP:
-If a City and Country are both provided, you MUST first verify if the City is actually located within the Country. If it is NOT, abort and reply exactly with:
-LOCATION_MISMATCH: The city of ${contextData.city} is not located in ${contextData.country}.
-Do not output any other text whatsoever if there is a mismatch.
+If a City and Country are both provided, verify if the City is actually located within the Country. If it is NOT, abort and reply exactly with:
+LOCATION_MISMATCH: The city of ${contextData.city || ""} is not located in ${contextData.country || ""}.
 
-STAKEHOLDER IDENTIFICATION:
-If the location is valid (or if no city was provided), deeply analyze the recommendation. Identify 4 to 8 specific, highly relevant institutional stakeholders that the actor must engage to operationalize this in the specified location.
-Output a strict, comma-separated list of these specific stakeholder names. Provide only the tags in the comma-separated list.`;
+INSTRUCTIONS:
+Step 1: Conduct a deep geographical and institutional analysis of the requested location and the specific recommendation. Write this thought process inside <analysis> tags. In this section, identify the local governance structure, the specific ministries involved, active local/regional financial institutions, and the key international partners actively deploying programs at both the national and subnational levels in this location.
+Step 2: Based on your analysis, select 4 to 8 highly specific, real-world institutional stakeholders. Ensure your final list includes a strategic mix of local/national institutions AND relevant international partners.
+Step 3: Output ONLY the names of these stakeholders as a strict, comma-separated list inside <stakeholders> tags. 
+
+OUTPUT FORMAT:
+<analysis>
+(Your internal reasoning, mapping local acronyms, jurisdiction, financial mechanisms, and active international partners here)
+</analysis>
+<stakeholders>
+[Stakeholder 1], [Stakeholder 2], [Stakeholder 3], [Stakeholder 4]
+</stakeholders>`;
 
   try {
     const response = await ai.models.generateContent({
@@ -65,12 +88,23 @@ Output a strict, comma-separated list of these specific stakeholder names. Provi
       throw new Error("The AI returned an empty response. This might be due to safety filters.");
     }
     
-    const trimmedText = text.trim();
-    if (trimmedText.startsWith("LOCATION_MISMATCH:")) {
-      throw new Error(trimmedText.replace("LOCATION_MISMATCH:", "").trim());
+    // Check for Location Mismatch before doing tag extraction
+    const mismatchMatch = text.match(/LOCATION_MISMATCH:\s*(.*)/i);
+    if (mismatchMatch) {
+      throw new Error(mismatchMatch[1].trim());
     }
 
-    return trimmedText.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    // Extract inside <stakeholders>
+    const stakeholdersMatch = text.match(/<stakeholders>([\s\S]*?)<\/stakeholders>/i);
+    let rawStakeholders = text;
+    if (stakeholdersMatch) {
+      rawStakeholders = stakeholdersMatch[1];
+    } else {
+      // Fallback: Remove the <analysis> block
+      rawStakeholders = text.replace(/<analysis>[\s\S]*?<\/analysis>/gi, '').trim();
+    }
+
+    return rawStakeholders.split(',').map(s => s.trim()).filter(s => s.length > 0 && s !== "LOCATION_MISMATCH");
   } catch (error: any) {
     console.error("Error calling Gemini API for stakeholders:", error);
     const message = error?.message || "Unknown error";

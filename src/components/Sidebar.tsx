@@ -59,18 +59,6 @@ export default function Sidebar({ currentStep, setCurrentStep, isOpen, toggleSid
           );
         })}
       </nav>
-
-      <div className="p-6 border-t border-line bg-surface">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-none bg-accent/5 flex items-center justify-center border border-line">
-            <User size={16} className="text-accent stroke-[1.5]" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="font-mono text-xs uppercase tracking-wider font-semibold text-ink-muted mb-1">Focal Point</p>
-            <p className="text-sm font-semibold text-ink truncate font-heading italic">Ministry of Finance</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

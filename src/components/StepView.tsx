@@ -20,6 +20,52 @@ const PARTNER_TYPES = [
   "UN Agency"
 ];
 
+function PartnerModal({ partnerData, onClose }: { partnerData: any, onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = 'unset'; };
+  }, []);
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+      <motion.div 
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" 
+        onClick={onClose} 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 20 }} 
+        animate={{ opacity: 1, scale: 1, y: 0 }} 
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        className="relative w-full max-w-2xl max-h-[85vh] bg-white border border-line shadow-2xl overflow-hidden flex flex-col rounded-xl"
+      >
+        <div className="flex items-center justify-between p-6 md:p-8 border-b border-line bg-paper">
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-ink pr-8">{partnerData.name}</h3>
+          <button onClick={onClose} className="p-2 border border-line hover:bg-surface rounded-full text-ink-muted transition-colors">
+            <X size={20} />
+          </button>
+        </div>
+        <div className="p-6 md:p-8 overflow-y-auto bg-surface">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {partnerData.subPartners.map((sub: any) => (
+              <a
+                key={sub.name}
+                href={sub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 bg-paper border border-line hover:border-slate-300 hover:bg-white rounded-lg transition-all group"
+              >
+                <span className="text-sm font-semibold text-ink group-hover:text-blue-600 transition-colors">{sub.name}</span>
+                <ExternalLink size={16} className="text-ink-muted shrink-0 ml-2" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 function ContextModal({ item, onClose }: { item: any, onClose: () => void }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -518,10 +564,12 @@ function RecommendationCard({ rec, stepTitle }: { rec: any; stepTitle: string })
 }
 export default function StepView({ step }: { step: any }) {
   const [activeTab, setActiveTab] = useState<'overview' | 'pathways' | 'recommendations'>('overview');
+  const [activePartnerModal, setActivePartnerModal] = useState<any>(null);
 
   // Reset tab when step changes
   useEffect(() => {
     setActiveTab('overview');
+    setActivePartnerModal(null);
   }, [step.id]);
 
   if (!step) return null;
@@ -653,16 +701,26 @@ export default function StepView({ step }: { step: any }) {
                                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-3">Key Partners</span>
                                 <div className="flex flex-wrap gap-2">
                                   {pathway.partners.map((p: any) => (
-                                    <a 
-                                      key={p.name} 
-                                      href={p.link} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer" 
-                                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-colors"
-                                    >
-                                      {p.name}
-                                      <ExternalLink size={12} className="text-slate-400" />
-                                    </a>
+                                    p.subPartners ? (
+                                      <button 
+                                        key={p.name}
+                                        onClick={() => setActivePartnerModal(p)}
+                                        className="inline-flex w-full sm:w-auto items-center justify-between sm:justify-start gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-colors cursor-pointer"
+                                      >
+                                        {p.name}
+                                      </button>
+                                    ) : (
+                                      <a 
+                                        key={p.name} 
+                                        href={p.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-colors"
+                                      >
+                                        {p.name}
+                                        <ExternalLink size={12} className="text-slate-400" />
+                                      </a>
+                                    )
                                   ))}
                                 </div>
                               </div>
@@ -722,6 +780,15 @@ export default function StepView({ step }: { step: any }) {
                 </div>
               </section>
             </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {activePartnerModal && (
+            <PartnerModal 
+              partnerData={activePartnerModal} 
+              onClose={() => setActivePartnerModal(null)} 
+            />
           )}
         </AnimatePresence>
       </div>

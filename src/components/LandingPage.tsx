@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { landingPageData, stepsData } from "../data/content";
-import { ArrowRight, Globe, FileText, TrendingUp, ExternalLink, HelpCircle, Target, Rocket, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Globe, FileText, TrendingUp, ExternalLink, HelpCircle, Target, Rocket, CheckCircle2, MapPin } from "lucide-react";
 
 function AnimatedCounter({ value }: { value: string }) {
   const ref = useRef(null);
@@ -58,6 +58,42 @@ interface LandingPageProps {
 
 export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
   const icons = [Globe, FileText, TrendingUp];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const carouselSlides = [
+    {
+      label: "COP 31 Context",
+      icon: Globe,
+      title: "Global Momentum Toward COP 31",
+      description: "The Toolkit supports CHAMP by enabling countries to deliver national climate commitments at the city level—where emissions and risks are concentrated—by mobilizing finance to drive emissions reductions, strengthen resilience, and close the urban climate finance gap.",
+      buttonText: "Learn more about COP 31",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      label: "Key Publication",
+      icon: FileText,
+      title: "UN-Habitat NDC Report Launch",
+      description: "A comprehensive guide on integrating urban climate action into Nationally Determined Contributions (NDCs). This vital report provides national governments with the framework needed to ensure municipal financing pipelines are formally recognized and supported.",
+      buttonText: "Read the Report",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      label: "Country Spotlight",
+      icon: MapPin, 
+      title: "Spotlight: Sweden & CHAMP",
+      description: "Sweden has actively engaged with the CHAMP initiative by fostering deep collaborations between national agencies and local municipalities, serving as a global blueprint for institutionalizing Multilevel Governance and systematically testing urban climate solutions.",
+      buttonText: "Explore Case Study",
+      image: "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
+  /* Auto-slide effect */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselSlides.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [carouselSlides.length]);
 
   return (
     <div className="max-w-5xl mx-auto pb-20">
@@ -65,10 +101,10 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="py-24 md:py-32 flex flex-col items-center text-center border-b border-line mb-16"
+        className="pt-24 md:pt-32 pb-12 md:pb-16 flex flex-col items-center text-center border-b border-line mb-12"
       >
         <div className="border border-line bg-surface px-6 py-2 mb-10 text-sm font-semibold text-ink-muted">
-          Operational Manual for National Governments
+          Toolkit for National Govts and CHAMP Partners
         </div>
         
         <h1 className="font-heading text-6xl md:text-[5.5rem] font-semibold tracking-tight leading-[1.05] mb-8">
@@ -128,6 +164,9 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
 
       {/* Interactive Data Dashboard */}
       <div className="mb-24">
+        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between border-b border-line pb-6 gap-6">
+          <h2 className="font-heading text-4xl text-ink tracking-tight max-w-lg">Key Highlights</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line">
           {landingPageData.dashboard.map((item, index) => {
             const Icon = icons[index];
@@ -187,31 +226,55 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
         </div>
       </motion.div>
 
-      {/* COP 30 Context */}
+      {/* Carousel Context Section */}
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="bg-ink p-10 md:p-16 mb-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-16 border border-line"
       >
-        <div className="relative z-10 md:w-1/2">
-          <div className="inline-flex items-center gap-3 border border-surface/20 px-4 py-2 mb-10 text-sm font-medium text-surface/80">
-            <Globe size={14} className="stroke-[1.5]" />
-            COP 30 Belém Context
+        <div className="relative z-10 md:w-1/2 min-h-[300px] flex flex-col justify-center">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-3 border border-surface/20 px-4 py-2 mb-10 text-sm font-medium text-surface/80">
+              {(() => {
+                const CurrentIcon = carouselSlides[currentSlide].icon;
+                return <CurrentIcon size={14} className="stroke-[1.5]" />;
+              })()}
+              {carouselSlides[currentSlide].label}
+            </div>
+            
+            <h2 className="font-heading text-4xl md:text-5xl text-surface mb-8 leading-[1.1] tracking-tight">
+              {carouselSlides[currentSlide].title.split(/(Toward COP 31|Report Launch|Sweden & CHAMP)/).map((part, i) => 
+                part.match(/(Toward COP 31|Report Launch|Sweden & CHAMP)/) ? 
+                <span key={i} className="text-surface/40 italic block">{part}</span> : part
+              )}
+            </h2>
+            
+            <p className="text-lg text-surface/60 leading-relaxed mb-12 max-w-lg font-light">
+              {carouselSlides[currentSlide].description}
+            </p>
+            
+            <button className="bg-surface text-ink px-8 py-4 text-sm font-semibold hover:bg-surface/90 transition-colors inline-flex items-center gap-4">
+              {carouselSlides[currentSlide].buttonText} <ArrowRight size={16} />
+            </button>
+          </motion.div>
+
+          {/* Dots Navigation */}
+          <div className="flex gap-2 mt-12">
+            {carouselSlides.map((_, idx) => (
+              <button 
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`w-12 h-1 transition-colors ${currentSlide === idx ? 'bg-surface' : 'bg-surface/20 hover:bg-surface/40'}`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
-          
-          <h2 className="font-heading text-5xl md:text-6xl text-surface mb-8 leading-[1.1] tracking-tight">
-            Global Momentum<br/>
-            <span className="text-surface/40 italic">Toward COP 30</span>
-          </h2>
-          
-          <p className="text-lg text-surface/60 leading-relaxed mb-12 max-w-lg font-light">
-            {landingPageData.cop30Context}
-          </p>
-          
-          <button className="bg-surface text-ink px-8 py-4 text-sm font-semibold hover:bg-surface/90 transition-colors inline-flex items-center gap-4">
-            Learn more about COP 30 <ArrowRight size={16} />
-          </button>
         </div>
 
         <div className="relative z-10 md:w-1/2 flex justify-center md:justify-end">
@@ -221,10 +284,14 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className="w-72 h-72 md:w-[450px] md:h-[450px] bg-[#0A0A0A] border border-surface/10 overflow-hidden relative"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" 
-              alt="City Infrastructure" 
-              className="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700 mix-blend-luminosity hover:mix-blend-normal"
+            <motion.img 
+              key={currentSlide}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.6, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              src={carouselSlides[currentSlide].image} 
+              alt={carouselSlides[currentSlide].title} 
+              className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-700 mix-blend-luminosity hover:mix-blend-normal"
               referrerPolicy="no-referrer"
             />
           </motion.div>
