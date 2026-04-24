@@ -2,9 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { landingPageData, stepsData } from "../data/content";
 import { ArrowRight, Globe, FileText, TrendingUp, ExternalLink, HelpCircle, Target, Rocket, CheckCircle2, MapPin } from "lucide-react";
-import ccflaLogo from "../assets/ccfla-logo.png";
-import viableCitiesLogo from "../assets/viable-cities-logo.png";
-import swedenFlag from "../assets/flag-of-sweden.png";
 
 function AnimatedCounter({ value }: { value: string }) {
   const ref = useRef(null);
@@ -187,7 +184,7 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 w-full">
               <div className="flex-1 flex justify-end items-center">
                 <img 
-                  src={ccflaLogo} 
+                  src="https://www.climatepolicyinitiative.org/wp-content/uploads/2021/06/ccfla-logo.png" 
                   alt="CCFLA" 
                   className="h-28 md:h-36 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply" 
                 />
@@ -195,7 +192,7 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
               <div className="hidden sm:block w-px h-32 bg-line shrink-0"></div>
               <div className="flex-1 flex justify-start items-center">
                 <img 
-                  src={viableCitiesLogo} 
+                  src="https://en.viablecities.se/wp-content/uploads/2021/04/viable-cities-logo.png" 
                   alt="Viable Cities" 
                   className="h-20 md:h-28 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply opacity-90" 
                 />
@@ -206,7 +203,7 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             <div className="flex flex-col items-center justify-center pt-8 border-t border-line w-4/5 md:w-3/4">
               <span className="text-ink-muted text-sm uppercase tracking-widest font-semibold mb-6">Supported by</span>
               <img 
-                src={swedenFlag} 
+                src="https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg" 
                 alt="Sweden" 
                 className="w-40 object-contain shadow-sm rounded-sm hover:-translate-y-1 transition-transform" 
               />
