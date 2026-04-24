@@ -163,6 +163,55 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
         </div>
       </motion.div>
 
+      {/* Partnership Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-24"
+      >
+        <div className="flex flex-col md:flex-row md:items-stretch items-center gap-12 md:gap-16">
+          <div className="md:w-5/12 space-y-6 flex flex-col justify-center">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-ink leading-tight tracking-tight">
+              A Joint Contribution to CHAMP
+            </h2>
+            <p className="text-xl md:text-2xl text-ink-muted font-light leading-relaxed">
+              This toolkit is a strategic partnership between <strong className="text-ink font-semibold">CCFLA</strong> and <strong className="text-ink font-semibold">Viable Cities</strong>. A key goal of this toolkit is to showcase impactful multilevel governance initiatives championed in <strong className="text-ink font-semibold">Sweden</strong>.
+            </p>
+          </div>
+          <div className="md:w-7/12 w-full flex flex-col items-center justify-between gap-12 py-4">
+            {/* Top row: CCFLA and Viable Cities logos placed horizontally */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 w-full">
+              <div className="flex-1 flex justify-end items-center">
+                <img 
+                  src="/CCFLA Logo.png" 
+                  alt="CCFLA" 
+                  className="h-28 md:h-36 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply" 
+                />
+              </div>
+              <div className="hidden sm:block w-px h-32 bg-line shrink-0"></div>
+              <div className="flex-1 flex justify-start items-center">
+                <img 
+                  src="/Viable Cities Logo.png" 
+                  alt="Viable Cities" 
+                  className="h-20 md:h-28 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply opacity-90" 
+                />
+              </div>
+            </div>
+            
+            {/* Bottom row: Sweden flag */}
+            <div className="flex flex-col items-center justify-center pt-8 border-t border-line w-4/5 md:w-3/4">
+              <span className="text-ink-muted text-sm uppercase tracking-widest font-semibold mb-6">Supported by</span>
+              <img 
+                src="/Flag_of_Sweden.svg.png" 
+                alt="Sweden" 
+                className="w-40 object-contain shadow-sm rounded-sm hover:-translate-y-1 transition-transform" 
+              />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Interactive Data Dashboard */}
       <div className="mb-24">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between border-b border-line pb-6 gap-6">

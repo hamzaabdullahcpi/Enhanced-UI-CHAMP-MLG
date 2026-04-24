@@ -126,10 +126,8 @@ function ContextModal({ item, onClose }: { item: any, onClose: () => void }) {
 }
 
 function UnifiedContextCard({ data }: { data: any }) {
-  const [expandedBarrier, setExpandedBarrier] = useState<number | null>(null);
   const [expandedOpportunity, setExpandedOpportunity] = useState<number | null>(null);
 
-  const barrierIcons = [AlertCircle, FileSearch, Banknote];
   const opportunityIcons = [Map, Landmark, Database, Users];
 
   return (
@@ -140,55 +138,9 @@ function UnifiedContextCard({ data }: { data: any }) {
         <p className="text-slate-700 leading-relaxed text-lg">{data.whatIsThisStep}</p>
       </div>
 
-      {/* Barriers & Opportunities */ }
+      {/* Opportunities */ }
       <div className="flex flex-col divide-y divide-slate-100">
         
-        {/* Barriers */}
-        <div className="p-8 pb-10">
-          <h2 className="font-heading text-xl font-bold text-ink mb-6">What barriers this step addresses</h2>
-          <div className="space-y-4">
-            {data.barriers.map((item: any, idx: number) => {
-              const Icon = barrierIcons[idx % barrierIcons.length];
-              return (
-              <div key={idx} className="border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
-                <button
-                  className="w-full p-4 md:px-6 flex items-center justify-between text-left bg-white focus:outline-none focus:bg-slate-50 transition-colors"
-                  onClick={() => setExpandedBarrier(expandedBarrier === idx ? null : idx)}
-                >
-                  <div className="flex items-center gap-4 pr-6">
-                    <div className="p-2 sm:p-2.5 rounded-xl bg-red-50 text-red-600 shrink-0">
-                      <Icon size={20} />
-                    </div>
-                    <h3 className="font-bold text-base md:text-lg text-slate-800 m-0 leading-snug">{item.title}</h3>
-                  </div>
-                  <div className={`shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center transition-transform duration-300 ${expandedBarrier === idx ? 'rotate-180 bg-slate-200' : ''}`}>
-                    <ChevronDown size={18} className="text-slate-500" />
-                  </div>
-                </button>
-                <AnimatePresence>
-                  {expandedBarrier === idx && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="p-5 md:px-6 pt-0 border-t border-slate-100 bg-slate-50">
-                        <p className="text-slate-800 font-bold mb-4 leading-relaxed mt-4 text-sm md:text-base">{item.shortText}</p>
-                        <div className="space-y-4 text-slate-700 leading-relaxed text-sm md:text-base">
-                          {item.expandedText.map((p: string, pIdx: number) => (
-                             <p key={pIdx}>{p}</p>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )})}
-          </div>
-        </div>
-
         {/* Opportunities */}
         <div className="p-8 pt-10 bg-slate-50/30">
           <h2 className="font-heading text-xl font-bold text-ink mb-6">What opportunities this step presents</h2>

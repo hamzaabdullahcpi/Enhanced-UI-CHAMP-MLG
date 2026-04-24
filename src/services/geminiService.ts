@@ -8,6 +8,28 @@ const getGeminiClient = () => {
   return new GoogleGenAI({ apiKey });
 };
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function executeWithRetry<T>(fn: () => Promise<T>, maxRetries = 3, baseDelayMs = 1000): Promise<T> {
+  let attempt = 0;
+  while (attempt < maxRetries) {
+    try {
+      return await fn();
+    } catch (error: any) {
+      const is503 = error?.status === 503 || error?.message?.includes('503') || error?.message?.includes('high demand') || error?.message?.includes('UNAVAILABLE') || error?.message?.includes('temporarily overloaded');
+      if (is503 && attempt < maxRetries - 1) {
+        attempt++;
+        const waitTime = baseDelayMs * Math.pow(2, attempt) + Math.random() * 500;
+        console.warn(`Gemini API overloaded. Retrying attempt ${attempt}/${maxRetries} in ${Math.round(waitTime)}ms...`);
+        await delay(waitTime);
+      } else {
+        throw error;
+      }
+    }
+  }
+  throw new Error("Failed after max retries");
+}
+
 const SYSTEM_INSTRUCTION = `You are an expert Multilevel Governance & Climate Finance Strategist based on the CHAMP initiative and the CCFLA/Urban-Act Enabling Framework Conditions. Your exclusive function is to analyze climate finance recommendations and map them to EXACT, real-world institutions in specific geographies.
 
 STAKEHOLDER MAPPING & HYPER-LOCALIZATION RULES:
@@ -74,14 +96,14 @@ OUTPUT FORMAT:
 </stakeholders>`;
 
   try {
-    const response = await ai.models.generateContent({
+    const response = await executeWithRetry(() => ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: prompt,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.2,
       },
-    });
+    }));
 
     const text = response.text;
     if (!text) {
@@ -142,14 +164,14 @@ Generate a strategic implementation plan for ${entityName}. For EVERY recommenda
 [Leave a blank line and repeat this exact block for the next recommendation.]`;
 
   try {
-    const response = await ai.models.generateContent({
+    const response = await executeWithRetry(() => ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: prompt,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.5,
       },
-    });
+    }));
 
     const text = response.text;
     if (!text) {
