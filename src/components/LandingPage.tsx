@@ -104,25 +104,45 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
         className="pt-24 md:pt-32 pb-12 md:pb-16 flex flex-col items-center text-center border-b border-line mb-12"
       >
         <div className="border border-line bg-surface px-6 py-2 mb-10 text-sm font-semibold text-ink-muted">
-          Toolkit for National Govts and CHAMP Partners
+          Toolkit for National Governments and CHAMP Partners
         </div>
         
         <h1 className="font-heading text-6xl md:text-[5.5rem] font-semibold tracking-tight leading-[1.05] mb-8">
-          <span className="text-ink">CHAMP Toolkit: Financing</span><br/>
+          <span style={{ color: '#3c4799', fontWeight: 'bold' }}>CHAMP Toolkit:</span> <span className="text-ink-muted italic font-normal">Financing</span><br/>
           <span className="text-ink-muted italic font-normal">Climate Action</span>
         </h1>
         
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
+        <div className="max-w-3xl mx-auto text-center mb-10 space-y-6">
           <p className="text-xl md:text-2xl text-ink leading-relaxed font-light">
-            Aligning national climate planning with local financial delivery through <strong className="font-semibold">Multilevel Governance (MLG)</strong>.
+            Empowering CHAMP countries to deliver national climate commitments and financing at the city level through <strong className="font-semibold">Multi-Level Governance</strong>.
           </p>
+          <div className="pt-2 pb-2">
+            <button
+              onClick={onIntro}
+              className="text-sm font-medium text-ink transition-colors border-b border-ink/30 hover:border-ink pb-1"
+            >
+              Read the introduction
+            </button>
+          </div>
           <p className="text-lg text-ink-muted leading-relaxed font-light">
             Explore a <strong className="text-ink">5-step journey to Multilevel Governance</strong>. This stepwise path is sequenced to cover the entire spectrum of actions needed to operationalize MLG, yet remains flexible—allowing countries to enter at different starting points based on their current readiness and national context.
           </p>
         </div>
         
+        <div className="flex flex-col items-center gap-6 mb-16">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={onStart}
+            className="inline-flex items-center gap-4 bg-ink text-surface px-10 py-5 text-sm font-semibold hover:bg-accent transition-colors"
+          >
+            Explore the 5-step journey
+            <ArrowRight size={16} />
+          </motion.button>
+        </div>
+
         {/* Flowing MLG Journey Graphic */}
-        <div className="flex flex-col md:flex-row items-stretch justify-center w-full max-w-5xl mx-auto mb-20 border border-line bg-paper">
+        <div className="flex flex-col md:flex-row items-stretch justify-center w-full max-w-5xl mx-auto border border-line bg-paper">
           {[
             { num: "01", label: "Assess Environments", goal: stepsData[0].goal },
             { num: "02", label: "Institutionalize MLG", goal: stepsData[1].goal },
@@ -141,25 +161,6 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             </div>
           ))}
         </div>
-
-        <div className="flex flex-col items-center gap-6">
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={onStart}
-            className="inline-flex items-center gap-4 bg-ink text-surface px-10 py-5 text-sm font-semibold hover:bg-accent transition-colors"
-          >
-            Start the 5-Step Journey
-            <ArrowRight size={16} />
-          </motion.button>
-          
-          <button
-            onClick={onIntro}
-            className="text-sm font-medium text-ink-muted hover:text-ink transition-colors border-b border-transparent hover:border-ink pb-1"
-          >
-            Or read the Introduction first
-          </button>
-        </div>
       </motion.div>
 
       {/* Interactive Data Dashboard */}
@@ -172,24 +173,34 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             const Icon = icons[index];
             
             return (
-              <motion.div
+              <motion.a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-surface p-12 hover:bg-paper transition-colors group relative"
+                className="flex flex-col justify-between bg-surface p-12 hover:bg-paper transition-colors group relative cursor-pointer"
               >
-                <div className="mb-10 text-accent opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">
-                  <Icon size={28} className="stroke-[1.5]" />
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-sm font-semibold text-ink-muted mb-4">{item.title}</h3>
-                  <div className="font-heading text-5xl md:text-6xl text-ink mb-6 tracking-tight">
-                    <AnimatedCounter value={item.value} />
+                <div>
+                  <div className="mb-10 text-accent opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">
+                    <Icon size={28} className="stroke-[1.5]" />
                   </div>
-                  <p className="text-ink-muted text-sm leading-relaxed font-light">{item.description}</p>
+                  <div className="relative z-10">
+                    <h3 className="text-sm font-semibold text-ink-muted mb-4 group-hover:text-accent transition-colors">{item.title}</h3>
+                    <div className="font-heading text-5xl md:text-6xl text-ink mb-6 tracking-tight">
+                      <AnimatedCounter value={item.value} />
+                    </div>
+                    <p className="text-ink-muted text-sm leading-relaxed font-light">{item.description}</p>
+                  </div>
                 </div>
-              </motion.div>
+                <div className="relative z-10 mt-8 flex justify-end">
+                  <div className="w-8 h-8 flex items-center justify-center border border-line bg-paper group-hover:bg-accent group-hover:border-accent transition-colors rounded-none">
+                    <ExternalLink size={14} className="text-ink-muted group-hover:text-surface transition-colors" />
+                  </div>
+                </div>
+              </motion.a>
             );
           })}
         </div>

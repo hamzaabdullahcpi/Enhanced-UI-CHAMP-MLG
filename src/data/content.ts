@@ -7,17 +7,20 @@ export const landingPageData = {
     {
       title: "CHAMP Signatories",
       value: "77",
-      description: "National governments have endorsed CHAMP, representing a major share of global GDP and emissions."
+      description: "National governments have endorsed CHAMP, representing a major share of global GDP and emissions.",
+      link: "https://www.cop28.com/en/cop28-uae-coalition-for-high-ambition-multilevel-partnerships-for-climate-action"
     },
     {
       title: "Urban Content in NDCs",
       value: "81%",
-      description: "of submitted NDCs 3.0 include well-developed urban measures, marking a massive leap from previous cycles."
+      description: "of submitted NDCs 3.0 include well-developed urban measures, marking a massive leap from previous cycles.",
+      link: "https://unhabitat.org/urban-content-in-ndc-30-a-snapshot-of-128-ndcs"
     },
     {
-      title: "The Climate Finance Gap",
+      title: "Urban Climate Finance Needs",
       value: "USD 4.3T",
-      description: "Cities require USD 4.3 trillion in investment annually by 2030 just for climate mitigation."
+      description: "Cities require USD 4.3 trillion in investment annually by 2030 just for climate mitigation.",
+      link: "https://citiesclimatefinance.org/publications/2024-state-of-cities-climate-finance"
     }
   ],
   toolkitContext: [

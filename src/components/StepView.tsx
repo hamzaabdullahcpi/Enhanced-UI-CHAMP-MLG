@@ -769,9 +769,6 @@ export default function StepView({ step }: { step: any }) {
               <section>
                 <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-line pb-4">
                   <h2 className="font-heading text-3xl text-ink">Recommendations for Multilevel Governance Stakeholders</h2>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-line bg-surface text-ink-muted text-sm font-semibold">
-                    <Sparkles size={12} className="text-accent" /> AI Generation Integrated
-                  </div>
                 </div>
                 <div className="space-y-12">
                   {step.recommendations.map((rec: any, index: number) => (
