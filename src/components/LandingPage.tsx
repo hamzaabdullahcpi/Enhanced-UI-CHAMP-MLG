@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { landingPageData, stepsData } from "../data/content";
 import { ArrowRight, Globe, FileText, TrendingUp, ExternalLink, HelpCircle, Target, Rocket, CheckCircle2, MapPin } from "lucide-react";
-import ccflaLogo from "../assets/CCFLA Logo.png";
-import viableCitiesLogo from "../assets/Viable Cities Logo.png";
-import swedenFlag from "../assets/Flag_of_Sweden.svg.png";
+import ccflaLogo from "../assets/ccfla-logo.png";
+import viableCitiesLogo from "../assets/viable-cities-logo.png";
+import swedenFlag from "../assets/flag-of-sweden.png";
 
 function AnimatedCounter({ value }: { value: string }) {
   const ref = useRef(null);
