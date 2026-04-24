@@ -274,7 +274,7 @@ export const stepsData = [
         ]
       },
       {
-        name: "Independent Coordination Entities",
+        name: "Multilevel Coordination Entities",
         what: "A dedicated, funded task force embedded within the National Country Platform responsible for bridging national platforms and local transition arenas.",
         howItWorks: "Serves as the permanent Subnational Technical Working Group, actively aligning policy directionality across governance levels to solve 'limited coordination'.",
         howToImplement: "Charter a permanent coordination secretariat within the national climate governance structure.",
@@ -293,7 +293,9 @@ export const stepsData = [
         howItWorks: "Translates the political joint commitments into measurable, sector-specific capital portfolios ready for NDC integration.",
         howToImplement: "Deploy capital expenditure forecasting tools tailored specifically for municipal finance departments.",
         frameworks: [
-          { name: "CCC Investment Planning Phase", link: "https://en.viablecities.se/klimatkontrakt-2030" }
+          { name: "CCC investment planning process", link: "https://en.viablecities.se/klimatkontrakt-2030" },
+          { name: "Green City Action Plan", link: "https://www.ebrdgreencities.com/" },
+          { name: "C40 Climate Budgeting Guide", link: "https://www.c40knowledgehub.org/" }
         ],
         caseStudies: [
           { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
@@ -301,7 +303,8 @@ export const stepsData = [
         ],
         partners: [
           { name: "C40", link: "https://www.c40.org/" },
-          { name: "ICLEI", link: "https://iclei.org/" }
+          { name: "Viable Cities", link: "https://en.viablecities.se/" },
+          { name: "EBRD", link: "https://www.ebrd.com/" }
         ]
       }
     ],
@@ -572,12 +575,12 @@ export const stepsData = [
         ]
       },
       {
-        name: "Standardized Grant Call Frameworks",
+        name: "Grants for Demos",
         what: "Structured mechanisms for deploying seed/grant funding to municipalities to pilot new technologies or operational models.",
         howItWorks: "National funders issue grant calls to cities to test systemic interventions, proving technical viability and finance readiness before debt is introduced.",
         howToImplement: "Design grant criteria that explicitly measure a local government's capacity to scale the pilot into a full infrastructure project.",
         frameworks: [
-          { name: "System Demonstrators Model", link: "https://en.viablecities.se/" }
+          { name: "System Demonstrators Grants Call Framework", link: "https://en.viablecities.se/" }
         ],
         caseStudies: [
           { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
@@ -634,7 +637,7 @@ export const stepsData = [
   },
   {
     id: 5,
-    title: "Monitoring and Evaluation",
+    title: "Scale and Enhance Multilevel Climate Investment Systems through Global Partnerships",
     goal: "Scale implementation by leveraging partnerships that connect cities to finance, technical assistance, implementation and monitoring support.",
     unifiedContext: {
       whatIsThisStep: "This final step reflects the continuous nature of Multilevel Governance. It involves utilizing granular data for rigorous Monitoring & Evaluation (M&E) to update climate targets, scaling lateral peer-to-peer networks to cross-pollinate successful strategies between cities, and actively engaging international support to circumvent limited sovereign administrative capacity.",
@@ -690,11 +693,14 @@ export const stepsData = [
     },
     pathways: [
       {
-        name: "City Networks and Finance Coalitions",
-        what: "Global Matchmaking Hubs connecting aggregated sovereign portfolios with global capital and sharing best practices.",
-        howItWorks: "These coalitions work to build capacities, provide access to a broader finance actor network, and systematically replicate best practices across borders.",
-        howToImplement: "Integrate domestic project data into international climate finance registries and participate in CHAMP High-Level Dialogues to foster these essential partnerships.",
+        name: "Peer Learning and Networking",
+        what: "Lateral agreements where cities commit to shared operational targets, promoting peer-to-peer exchanges of experiences.",
+        howItWorks: "Groups municipalities into cohorts to jointly test and scale solutions, expanding the transition arena beyond isolated national-local verticals.",
+        howToImplement: "Facilitate regular municipal transition labs, scaling joint commitments to expand horizontal learning and replication across borders.",
         frameworks: [
+          { name: "First Mover Cities", link: "https://www.weforum.org/" },
+          { name: "Viable Cities", link: "https://en.viablecities.se/" },
+          { name: "Global Climate Neutral and Smart Cities", link: "https://netzerocities.eu/" },
           { name: "CCFLA Action Groups", link: "https://climatecities.org/" },
           { name: "C40 Finance Academies", link: "https://www.c40.org/" }
         ],
@@ -728,20 +734,22 @@ export const stepsData = [
         ]
       },
       {
-        name: "Peer-to-Peer Learnings and Commitments",
-        what: "Lateral agreements where cities commit to shared operational targets, promoting peer-to-peer exchanges of experiences.",
-        howItWorks: "Groups municipalities into cohorts to jointly test and scale solutions, expanding the transition arena beyond isolated national-local verticals.",
-        howToImplement: "Facilitate regular municipal transition labs, scaling the Viable Cities Joint Commitments model to expand horizontal learning.",
+        name: "Monitoring and Evaluation",
+        what: "Implementing rigorous tracking systems to measure the success of Multilevel Governance frameworks and ensure ongoing capital absorption.",
+        howItWorks: "Utilizes granular data and digitized tracking systems to monitor capital deployment and update climate targets iteratively.",
+        howToImplement: "Deploy standardized M&E frameworks that align with National Voluntary Reviews and Biennial Transparency Reports.",
         frameworks: [
-          { name: "First Mover Cities", link: "https://www.weforum.org/" },
-          { name: "Global Climate Neutral and Smart Cities", link: "https://netzerocities.eu/" },
-          { name: "Viable Cities", link: "https://en.viablecities.se/" }
+          { name: "NDC Tracker", link: "https://ndcpartnership.org/ndc-tracker" },
+          { name: "State of Cities Climate Finance Report", link: "https://www.climatecities.org/" }
         ],
         caseStudies: [
           { title: "Tentative Case Study: Urban Implementation Example", image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=400&q=80", link: "#" },
           { title: "Tentative Case Study: Regional Collaboration Model", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80", link: "#" }
         ],
-        partners: []
+        partners: [
+          { name: "NDC Partnership", link: "https://ndcpartnership.org/" },
+          { name: "CCFLA", link: "https://climatecities.org/" }
+        ]
       }
     ],
     recommendations: [
