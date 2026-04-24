@@ -184,17 +184,19 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 w-full">
               <div className="flex-1 flex justify-end items-center">
                 <img 
-                  src="https://www.climatepolicyinitiative.org/wp-content/uploads/2021/06/ccfla-logo.png" 
+                  src="https://www.climatepolicyinitiative.org/wp-content/uploads/2020/09/CCFLA-hero.png" 
                   alt="CCFLA" 
-                  className="h-28 md:h-36 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply" 
+                  className="h-36 md:h-44 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply md:translate-x-4" 
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="hidden sm:block w-px h-32 bg-line shrink-0"></div>
               <div className="flex-1 flex justify-start items-center">
                 <img 
-                  src="https://en.viablecities.se/wp-content/uploads/2021/04/viable-cities-logo.png" 
+                  src="https://images.squarespace-cdn.com/content/v1/59e86b55aeb625e2140eec1a/1634044375194-3G0ZG1T5HGMGNB2QSEYU/1.+VC_Logotyp_PRIM%C3%84R_RGB.png" 
                   alt="Viable Cities" 
                   className="h-20 md:h-28 object-contain grayscale hover:grayscale-0 transition-all mix-blend-multiply opacity-90" 
+                  referrerPolicy="no-referrer"
                 />
               </div>
             </div>
@@ -203,9 +205,10 @@ export default function LandingPage({ onStart, onIntro }: LandingPageProps) {
             <div className="flex flex-col items-center justify-center pt-8 border-t border-line w-4/5 md:w-3/4">
               <span className="text-ink-muted text-sm uppercase tracking-widest font-semibold mb-6">Supported by</span>
               <img 
-                src="https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg" 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/3840px-Flag_of_Sweden.svg.png" 
                 alt="Sweden" 
                 className="w-40 object-contain shadow-sm rounded-sm hover:-translate-y-1 transition-transform" 
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
